@@ -12,6 +12,8 @@ pip install django-casbin
 
 ## Simple Example
 
+This repo is just a working Django app that shows the usage of django-casbin. To use it in your existing Django app, you need:
+
 - Add the middleware to your Django app's ``settings.py``:
 
 ```python
@@ -27,18 +29,19 @@ MIDDLEWARE = [
 ]
 ```
 
-- In ``casbin_middleware/middleware.py``:
+- Copy ``casbin_middleware`` folder to your Django's top folder, modify ``casbin_middleware/middleware.py`` if you need:
 
 ```python
 import casbin
 
     def __init__(self, get_response):
         self.get_response = get_response
-        # load the casbin model and policy from files, database is also supported.
+        # load the casbin model and policy from files.
+        # change the 2nd arg to use a database.
         self.enforcer = casbin.Enforcer("casbin_middleware/authz_model.conf", "casbin_middleware/authz_policy.csv")
 
     def check_permission(self, request):
-        # check the permission.
+        # change the user, path, method as you need.
         user = request.user.username
         if request.user.is_anonymous:
             user = 'anonymous'
@@ -46,6 +49,16 @@ import casbin
         method = request.method
         return self.enforcer.enforce(user, path, method)
 ```
+
+- The default policy ``authz_policy.csv`` is:
+
+```csv
+p, anonymous, /, GET
+p, admin, *, *
+g, alice, admin
+```
+
+It means ``anonymous`` user can only access homepage ``/``. Admin users like alice can access any pages. Currently all accesses are regarded as ``anonymous``. Add your authentication to let a user log in.
 
 ## Documentation
 
