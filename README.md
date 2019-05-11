@@ -1,6 +1,6 @@
-# django-casbin 
+# django-casbin
 
-[![Join the chat at https://gitter.im/gin-gonic/gin](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gin-gonic/gin)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/casbin/lobby)
 
 django-casbin is an authorization middleware for [Django](https://www.djangoproject.com/), it's based on [PyCasbin](https://github.com/casbin/pycasbin).
 
