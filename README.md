@@ -7,7 +7,7 @@ django-casbin is an authorization middleware for [Django](https://www.djangoproj
 ## Installation
 
 ```
-pip install django-casbin
+pip install casbin
 ```
 
 ## Simple Example
