@@ -46,5 +46,5 @@ class CasbinMiddleware:
         method = request.method
         return self.enforcer.enforce(user, path, method)
 
-    def require_permission(self,):
+    def require_permission(self, ):
         raise PermissionDenied
