@@ -2,6 +2,8 @@
 
 [![Discord](https://img.shields.io/discord/1022748306096537660?logo=discord&label=discord&color=5865F2)](https://discord.gg/S5UjpzGZjN)
 
+**News**: 🔥🔥🔥 How to use it with `Django` ? Try [Django Authorization >>>](https://github.com/pycasbin/django-authorization), an authorization library for `Django` framework.
+
 django-casbin is an authorization middleware for [Django](https://www.djangoproject.com/), it's based on [PyCasbin](https://github.com/casbin/pycasbin).
 
 ## Installation
